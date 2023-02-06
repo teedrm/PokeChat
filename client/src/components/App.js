@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Spline from "@splinetool/react-spline";
-import PlayButton from "/src/components/PlayButton"
+import PlayButton from "./PlayButton"
 
 export default function App() {
   return (
