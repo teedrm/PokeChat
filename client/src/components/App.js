@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import Spline from "@splinetool/react-spline";
 import PlayButton from "./PlayButton"
+import ChatRoom from "./ChatRoom";
 
 export default function App() {
 
 
   return (
     <Wrapper className="App">
-      <ButtonContainer className="play-button">
+      <ChatRoom />
+      {/* <ButtonContainer className="play-button">
       <PlayButton />
 
       
@@ -15,7 +17,7 @@ export default function App() {
       <Instruction><Spline scene="https://prod.spline.design/kimyBtkdtDt0rtFi/scene.splinecode" /></Instruction>
       <SceneContainer className="spline-scene">
       <Spline scene="https://prod.spline.design/cwaI5825d30JGN9H/scene.splinecode" />
-      </SceneContainer>
+      </SceneContainer> */}
     </Wrapper>
   );
 }
