@@ -3,10 +3,14 @@ import Spline from "@splinetool/react-spline";
 import PlayButton from "./PlayButton"
 
 export default function App() {
+
+
   return (
     <Wrapper className="App">
       <ButtonContainer className="play-button">
       <PlayButton />
+
+      
       </ButtonContainer>
       <Instruction><Spline scene="https://prod.spline.design/kimyBtkdtDt0rtFi/scene.splinecode" /></Instruction>
       <SceneContainer className="spline-scene">
