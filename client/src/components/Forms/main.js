@@ -2,6 +2,7 @@
 // import React from "react";
 // import Spline from "@splinetool/react-spline";
 import styled from "styled-components";
+import SignUpForm from "./SignUpForm";
 // // import * as TextStyles from "./TextStyles";
 
 // import Logo from "./Logo";
@@ -99,10 +100,12 @@ const SignUp = () => {
       <div>
         <Wrapper>
          <SplineScene />
+          <SignUpForm />
          </Wrapper>
       </div>
   );
 };
 const Wrapper = styled.div`
 width: 100%;`;
+
 export default SignUp;
