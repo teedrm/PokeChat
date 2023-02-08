@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import * as TextStyles from "../TextStyles";
+// import * as TextStyles from "../TextStyles";
 
 function DownloadButton() {
   return (
@@ -31,6 +31,6 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled(TextStyles.BodyMain)`
+const Title = styled.div`
   color: white;
 `;
