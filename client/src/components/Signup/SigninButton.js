@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import * as TextStyles from "../TextStyles";
+// import * as TextStyles from "../TextStyles";
 
 function SigninButton(props) {
   const { title } = props;
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Title = styled(TextStyles.Caption)`
+const Title = styled.div`
   color: white;
   padding: 12px 20px;
   text-transform: uppercase;
