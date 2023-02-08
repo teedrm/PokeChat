@@ -1,0 +1,29 @@
+
+.Login {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: black;
+    color: white;
+    width: 250px;
+    height: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    background: black;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 10px 80px;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+    box-sizing: border-box;
+     margin-top: 30px;
+     align-items: center;
+}
+
+    button:hover {
+      transform: translateY(-2px);
+}
