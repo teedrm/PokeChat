@@ -15,7 +15,8 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="App">
+    <div className="Login">
+      <h1>Welcome Back!</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <label>Email</label>
@@ -27,7 +28,7 @@ export default function LoginForm() {
         </div>
         <div className="form-control">
           <label></label>
-          <button type="submit">Login</button>
+          <button id="login-button" type="submit">Login</button>
         </div>
       </form>
     </div>
