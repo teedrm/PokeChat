@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
+import io from 'socket.io-client';
 import styled from "styled-components";
+
+//connection to socket server
+const socket = io.connect("http://localhost:8000")
 
 export default function Chatbox(props) {
   // const { roomId } = props.match.params; // Gets roomId from URL
   // const { messages, sendMessage } = useChat(roomId); // Creates a websocket and manages messaging
+  const [messageReceived, setMessageReceived] = useState("");
   const [newMessage, setNewMessage] = useState(""); // Message to be sent
 
   const handleNewMessageChange = (event) => {
@@ -15,27 +20,19 @@ export default function Chatbox(props) {
   //   setNewMessage("");
   // };
 
+  const sendMessage = () => {
+    //emit message using socket.io
+    socket.emit("send message", newMessage);
+  };
+
+  useEffect(() => {
+    socket.on("receive_message", (data) => {
+      setMessageReceived(data.message);
+    })
+  }, [socket]);
+
   const chatboxstyle = { listStyle: "none" };
-  const [messages, setMessages] = useState([
-    "123",
-    "abc",
-    "ASssssssssaaabsxxxxaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    "sdas",
-    "asa",
-    "1234",
-    "1234",
-    "1234",
-    "1234",
-    "1234",
-    "sdfsdf",
-    "sdfsfs",
-    "2131",
-    "2131",
-    "2131",
-    "2131",
-    "2131"
-  ]);
-  const listOfMessages = messages.map((msg, i) => {
+  const listOfMessages = messageReceived.map((msg, i) => {
     return (
       <li style={chatboxstyle} key={i}>
         <TextStyle>{msg}</TextStyle>
@@ -57,7 +54,7 @@ export default function Chatbox(props) {
             className="new-message-input"
           />
           <button
-          // onClick={handleSendMessage} className="send-message-button"
+           onClick={sendMessage} className="send-message-button"
           >
             Send
           </button>
