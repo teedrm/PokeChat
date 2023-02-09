@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
+
 export default function SignUpForm() {
   const [successMsg, setSuccessMsg] = useState("");
   const {
@@ -17,12 +18,15 @@ export default function SignUpForm() {
   };
 
   return (
-    <div className="App">
+    <div className="Register">
+      <h1>Get started!</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         {successMsg && <p className="success-msg">{successMsg}</p>}
         <div className="form-control">
-          <label>Username</label>
+          {/* <label>Username</label> */}
           <input
+          className="input-control"
+          placeholder="Username"
             type="text"
             {...register("username", {
               required: "Username is required."
@@ -33,8 +37,10 @@ export default function SignUpForm() {
           )}
         </div>
         <div className="form-control">
-          <label>Email</label>
+          {/* <label>Email</label> */}
           <input
+          className="input-control"
+          placeholder="Email"
             type="text"
             {...register("email", {
               required: "Email is required.",
@@ -47,8 +53,10 @@ export default function SignUpForm() {
           {errors.email && <p className="errorMsg">{errors.email.message}</p>}
         </div>
         <div className="form-control">
-          <label>Password</label>
+          {/* <label>Password</label> */}
           <input
+          className="input-control"
+          placeholder="Password"
             type="password"
             {...register("password", {
               required: true,
@@ -78,7 +86,11 @@ export default function SignUpForm() {
         </div>
         <div className="form-control">
           <label></label>
-          <button type="submit">Create an account</button>
+          <button id="login-button" type="submit">Create an account</button>
+        </div>
+        <div className="form-control">
+          
+          <h4>Already have an account? <a  href="/login">Sign in</a></h4>
         </div>
       </form>
     </div>
