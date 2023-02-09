@@ -2,22 +2,32 @@ import styled from "styled-components";
 import Spline from "@splinetool/react-spline";
 import PlayButton from "./PlayButton"
 import ChatRoom from "./ChatRoom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import SignUp from "./Signup/main";
+import Login from "./Login";
+import Home from "./Home";
+import LobbyPage from "./user/lobby";
+import CreateLobby from "./user/createLobby";
 
 export default function App() {
 
 
   return (
     <Wrapper className="App">
-      <ChatRoom />
-      {/* <ButtonContainer className="play-button">
-      <PlayButton />
+      <div>
+      <Router>
+        <Routes>
+          <Route path = "/" element={<Home/>} />
+          <Route path ="/signup" element={<SignUp/>} />
+          <Route path ="/login" element={<Login/>} />
+          <Route path ="/lobby" element={<LobbyPage />} />
+          <Route path ="/CreLobby" element={<CreateLobby />} />
+          <Route path ="/chatroom" element={<ChatRoom />} />
+        </Routes>
+      </Router>
 
-      
-      </ButtonContainer>
-      <Instruction><Spline scene="https://prod.spline.design/kimyBtkdtDt0rtFi/scene.splinecode" /></Instruction>
-      <SceneContainer className="spline-scene">
-      <Spline scene="https://prod.spline.design/cwaI5825d30JGN9H/scene.splinecode" />
-      </SceneContainer> */}
+    </div>
     </Wrapper>
   );
 }
@@ -53,3 +63,4 @@ height: 50%;
 width: 50%;
 margin-top:25%;
 `;
+    
