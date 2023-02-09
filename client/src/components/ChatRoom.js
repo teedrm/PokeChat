@@ -1,24 +1,47 @@
 import Spline from "@splinetool/react-spline";
 import styled from "styled-components";
-
-import ChatBox from "./ChatBox";
+import { React, useState } from "react";
+import Chatbox from "./Chatbox";
+import FriendList from "./FriendList";
 import Navbar from "./Nav";
+import Settings from "./Settings";
+import Volume from "./Volume";
 
-export default function App() {
+export default function ChatRoom(props) {
+  // const [friends, setFriends] = useState(true);
+  const [state, setState] = useState({
+    friends: false,
+    settings: false,
+    volume: false
+  });
+
   return (
     <div>
-      <Navbar />
+      <Navbar
+        onFriends={() => {
+          setState({ ...state, friends: !state.friends });
+        }}
+        onSettings={() => {
+          setState({ ...state, settings: !state.settings });
+        }}
+        onVolume={() => {
+          setState({ ...state, volume: !state.volume });
+        }}
+      />
       <ChatRoomStyle>
         <Spline scene="https://prod.spline.design/kIeBNERFD3J58-JX/scene.splinecode" />
       </ChatRoomStyle>
-      <ChatBoxStyle>
-        <ChatBox />
-      </ChatBoxStyle>
+      <ChatboxStyle>
+        <Chatbox />
+      </ChatboxStyle>
+      {state.friends && <FriendList />}
+      {state.settings && <Settings />}
+      {state.volume && <Volume />}
     </div>
   );
 }
 
-const ChatBoxStyle = styled.div`
+const ChatboxStyle = styled.div`
   width: 28%;
   max-height: 30vh;
   margin-left: 10px;
