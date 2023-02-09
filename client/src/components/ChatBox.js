@@ -3,7 +3,6 @@ import { authContext } from '../providers/AuthProvider';
 import io from 'socket.io-client';
 import styled from "styled-components";
 
-//connection to socket server
 export default function Chatbox(props) {
 
   const [messages, setMessages] = useState([]);
