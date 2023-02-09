@@ -1,0 +1,47 @@
+.friends-container {
+  background: white;
+  border-radius: 12px;
+  padding: 5px;
+  width: 15%;
+  max-height: 50vh;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+}
+
+.add-friend {
+  display: flex;
+}
+.myself {
+  display: flex;
+  margin-top: 10px;
+}
+.icon {
+  margin: 3px 6px 0 10px;
+}
+.add-friend input {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.add-friend button {
+  margin-top: 3.5px;
+  padding-top: 1px;
+  display: flex;
+  height: 22.5px;
+}
+.add-friend button :hover {
+  opacity: 1;
+}
+.friends-container ul {
+  list-style-type: none;
+  overflow-y: auto;
+}
+
+.friends-container li {
+  display: flex;
+}
+.friends-container li :hover {
+  background-color: #ddd;
+}
