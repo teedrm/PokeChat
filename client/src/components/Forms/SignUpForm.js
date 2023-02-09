@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 export default function SignUpForm() {
   const [successMsg, setSuccessMsg] = useState("");
@@ -13,6 +14,10 @@ export default function SignUpForm() {
   const onSubmit = (data) => {
     console.log(data);
     setSuccessMsg("User registration is successful.");
+    axios.post('/signup', data)
+    .then(r => {
+        console.log(r)
+      })
     reset();
   };
 

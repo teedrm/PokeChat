@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').config()
 const cors = require("cors");
 const app = express();
 const userQueries = require('./db/queries/users');
@@ -16,8 +17,12 @@ app.get("/login", (req, res) => {
 
 app.post("/signup", (req, res) => {
   const data = req.body;
+  console.log("DATA", data);
   userQueries.createNewUser(data)
-  .then(r => console.log(r))
+  .then(r =>{
+    console.log("RES", r)
+    res.json({"message": "Hi"});
+  })
   });
 
 app.listen(8000, () => {
