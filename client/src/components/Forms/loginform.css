@@ -13,14 +13,13 @@ h1 {
     font-size: 40px;
 }
 
-button {
+#login-button {
     background-color: black;
     color: white;
     width: 350px;
     height: 50px;
     font-size: 20px;
     font-weight: bold;
-    background: black;
     border: 2px solid rgba(255, 255, 255, 0.8);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -31,22 +30,22 @@ button {
      align-items: center;
 }
 
-    button:hover {
+    #login-button:hover {
       transform: translateY(-2px);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .form-control {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-input {
+/* .form-control {
+    display: flex;
+    flex-direction: column;
+} */
+
+.input-control {
     width: 300px;
     height: 50px;
     margin: 20px 0;
@@ -56,7 +55,7 @@ input {
     outline: none;
 }
 
-input:focus {
+.input-control:focus {
     border-bottom: 2px solid black;
 }
 
