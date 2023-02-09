@@ -94,7 +94,7 @@ import SignUpForm from "./SignUpForm";
 //   }
 // `;
 
-import SplineScene from "./SplineScene";
+import SplineScene from "./SplineScene-Greninjia";
 const SignUp = () => {
   return (
       <div>
