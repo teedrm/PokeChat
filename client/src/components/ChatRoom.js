@@ -1,7 +1,7 @@
 import Spline from "@splinetool/react-spline";
 import styled from "styled-components";
 import { React, useState } from "react";
-import Chatbox from "./Chatbox";
+import Chatbox from "./ChatBox";
 import FriendList from "./FriendList";
 import Navbar from "./Nav";
 import Settings from "./Settings";

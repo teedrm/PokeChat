@@ -4,7 +4,7 @@
     flex-direction: column;
 }
 
-button {
+#login-button button {
     background-color: black;
     color: white;
     width: 250px;
