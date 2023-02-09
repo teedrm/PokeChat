@@ -1,14 +1,40 @@
-import React from "react";
-import "./Nav.css";
+import { React } from "react";
+import "./navbar.css";
+import { FaHome, FaRegSun, FaVolumeUp, FaUserFriends } from "react-icons/fa";
 
-export default function Navbar() {
+export default function Navbar(props) {
+  // const [state, setState] = useState({
+  //   friends: false
+  // });
+
   return (
     <nav className="navbar">
       <div className="nav-elements">
         <ul>
-          <li>Home</li>
-          <li>Blog</li>
-          <li>Projects</li>
+          <li>
+            <FaHome size={18} />
+          </li>
+          <li>
+            <FaUserFriends
+              size={18}
+              friends={props.friends}
+              onClick={props.onFriends}
+            />
+          </li>
+          <li>
+            <FaVolumeUp
+              size={18}
+              volume={props.volume}
+              onClick={props.onVolume}
+            />
+          </li>
+          <li>
+            <FaRegSun
+              size={18}
+              settings={props.settings}
+              onClick={props.onSettings}
+            />
+          </li>
         </ul>
       </div>
     </nav>
