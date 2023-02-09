@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-export default function ChatBox(props) {
+export default function Chatbox(props) {
   // const { roomId } = props.match.params; // Gets roomId from URL
   // const { messages, sendMessage } = useChat(roomId); // Creates a websocket and manages messaging
   const [newMessage, setNewMessage] = useState(""); // Message to be sent
@@ -48,21 +48,19 @@ export default function ChatBox(props) {
         <ul>{listOfMessages}</ul>
       </ChatboxStyle>
       <MessageInput>
-        <div>
-          <form>
-            <input
-              type="text"
-              value={newMessage}
-              onChange={handleNewMessageChange}
-              placeholder="Write message..."
-              className="new-message-input-field"
-            />
-            <button
-            // onClick={handleSendMessage} className="send-message-button"
-            >
-              Send
-            </button>
-          </form>
+        <div className="message-box">
+          <input
+            type="text"
+            value={newMessage}
+            onChange={handleNewMessageChange}
+            placeholder="Write message..."
+            className="new-message-input"
+          />
+          <button
+          // onClick={handleSendMessage} className="send-message-button"
+          >
+            Send
+          </button>
         </div>
       </MessageInput>
     </div>
@@ -115,6 +113,6 @@ const MessageInput = styled.div`
   opacity: 0.85;
   bottom: 0;
   margin-top: 50px;
-
+  display: flex;
   /* overflow: hidden; */
 `;
