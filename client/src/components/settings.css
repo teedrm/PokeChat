@@ -1,0 +1,11 @@
+.settings-container {
+  background: white;
+  border-radius: 12px;
+  padding: 5px;
+  width: 25%;
+  height: 30%;
+  position: absolute;
+  z-index: 1;
+  top: 35%;
+  left: 40%;
+}
