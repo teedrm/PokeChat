@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import SignUp from "./Forms/main";
+import Register from "./Register";
 import Login from "./Login";
 import Home from "./Home";
 import ChatRoom from "./ChatRoom";
@@ -15,7 +15,7 @@ export default function App() {
       <Router>
         <Routes>
           <Route path = "/" element={<Home/>} />
-          <Route path ="/signup" element={<SignUp/>} />
+          <Route path ="/signup" element={<Register/>} />
           <Route path ="/login" element={<Login/>} />
           <Route path ="/lobby" element={<LobbyPage />} />
           <Route path ="/CreLobby" element={<CreateLobby />} />
