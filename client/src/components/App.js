@@ -1,17 +1,23 @@
-import styled from "styled-components";
-import Spline from "@splinetool/react-spline";
-import PlayButton from "./PlayButton"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import SignUp from "./Signup/main";
+import Login from "./Login";
+import Home from "./Home";
 
 export default function App() {
-  return (
-    <Wrapper className="App">
-      {/* <PlayButton /> */}
-      <Spline scene="https://prod.spline.design/cwaI5825d30JGN9H/scene.splinecode" />
-    </Wrapper>
-  );
-};
 
-const Wrapper = styled.div`
-  width: 100%;
-  height: 1000px;
-`;
+
+  return (
+    <div>
+      <Router>
+        <Routes>
+          <Route path = "/" element={<Home/>} />
+          <Route path ="/signup" element={<SignUp/>} />
+          <Route path ="/login" element={<Login/>} />
+        </Routes>
+      </Router>
+
+    </div>
+  );
+}
+
