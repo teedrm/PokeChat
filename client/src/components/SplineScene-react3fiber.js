@@ -258,6 +258,7 @@ export default function Scene({ ...props }) {
             />
           </group>
         </group>
+        
         <group name="plant 2" position={[889.26, -1020.44, -2756.75]} scale={0.49}>
           <mesh
             name="Cube 4"
