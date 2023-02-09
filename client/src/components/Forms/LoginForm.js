@@ -20,11 +20,11 @@ export default function LoginForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           {/* <label>Email</label> */}
-          <input type="text" name="email" {...register("email")} placeholder="Email"/>
+          <input className="input-control" type="text" name="email" {...register("email")} placeholder="Email"/>
         </div>
         <div className="form-control">
           {/* <label>Password</label> */}
-          <input type="password" name="password" {...register("password")} placeholder="Password" />
+          <input className="input-control" type="password" name="password" {...register("password")} placeholder="Password" />
         </div>
         <div className="form-control">
           <label></label>
