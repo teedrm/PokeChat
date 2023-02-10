@@ -4,40 +4,53 @@ import styled from "styled-components";
 
 export default function LobbyPage() {
   const [rooms, setRooms] = useState([
-    { id: 1, name: "Thy's room"},
-    { id: 2, name: "Bianca's room"},
-    { id: 3, name: "John's room"}
+    { id: 1, name: "Thy's room" },
+    { id: 2, name: "Bianca's room" },
+    { id: 3, name: "John's room" },
   ]);
+
+  const [newRoom, setNewRoom] = useState("");
 
   const navigate = useNavigate();
 
-  const handleClick = id => {
+  const handleClick = (id) => {
     navigate("/chatroom");
   };
 
-  return(
+const handleSubmit = event => {
+  event.preventDefault();
+  setRooms([...rooms, { id: rooms.length + 1, name: newRoom}]);
+  setNewRoom("");
+};
+
+  return (
     <LobbyStyle>
-  <div className="lobby-room">
-  <div className="header">
-    <h1>Chat Lobby Room</h1>
-  </div>
-  <div className="room-list">
-    <h2>Available Rooms:</h2>
-    <ul>
-      {rooms.map((room) => (
-          <li key={room.id}>
-            {/* <Link to onClick={() => handleClick(room.id)}> {room.name}</Link> */}
-            <Link to={`/chatroom/${room.id}`}>{room.name}</Link>
-          </li>
-        ))}
-    </ul>
-  </div>
-  </div>
-  </LobbyStyle>
-  )};
+      <div className="lobby-room">
+        <div className="header">
+          <h1>Chat Lobby Room</h1>
+        </div>
+        <div className="room-list">
+          <h2>Available Rooms:</h2>
+          <ul>
+            {rooms.map((room) => (
+              <li key={room.id}>
+                {console.log("room id", room.id, "room name", room.name)};
+                {/* <Link to onClick={() => handleClick(room.id)}> {room.name}</Link> */}
+                <Link to={`/chatroom/${room.id}`}>{room.name}</Link>
+              </li>
+            ))}
+          </ul>
+          <form onSubmit={handleSubmit}>
+              <input type="text" value={newRoom} onChange={(event) => setNewRoom(event.target.value)} />
+              <button type="submit">Create Room</button>
+          </form>
+        </div>
+      </div>
+    </LobbyStyle>
+  );
+}
 
-
-  const LobbyStyle = styled.div`
+const LobbyStyle = styled.div`
   body {
     background-color: #E0E0E0;
     font-family: Arial, sans-serif;
@@ -56,8 +69,6 @@ export default function LobbyPage() {
     text-align: center;
     font-size: 36px;
     margin-`;
-
-
 
 //   const [rooms, setRooms] = useState([]);
 //   const [players, setPlayers] = useState([]);
