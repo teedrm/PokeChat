@@ -5,12 +5,11 @@ import Login from "./Login";
 import Home from "./Home";
 
 import ChatRoom from "./ChatRoom";
-import LobbyPage from "./user/lobby";
-import CreateLobby from "./user/createLobby";
+import LobbyPage from "./Lobby/lobby";
+import CreateLobby from "./Lobby/createLobby";
 
 
 export default function App() {
-const { auth } = useContext(authContext);
 
   return (
     <div>
