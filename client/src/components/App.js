@@ -10,7 +10,7 @@ import CreateLobby from "./user/createLobby";
 
 
 export default function App() {
-
+const { auth } = useContext(authContext);
 
   return (
     <div>
@@ -19,6 +19,7 @@ export default function App() {
 
           <Route path = "/" element={<Home/>} />
           <Route path ="/signup" element={<Register/>} />
+        
           <Route path ="/login" element={<Login/>} />
           <Route path ="/lobby" element={<LobbyPage />} />
           <Route path ="/CreLobby" element={<CreateLobby />} />

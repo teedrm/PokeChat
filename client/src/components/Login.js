@@ -1,9 +1,11 @@
+
 import Spline from "@splinetool/react-spline";
 import SplineScene from "./Forms/SplineScene-Greninjia";
 import LoginForm from "./Forms/LoginForm";
 import style from "styled-components";
 
-const SignUp = () => {
+const Login = () => {
+
     return (
         <Wrapper>
             <FormContainer>
@@ -47,4 +49,4 @@ const SplineContainer = style.div`
     padding: 0;
   }
 `;
-export default SignUp;
+export default Login;

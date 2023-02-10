@@ -9,4 +9,11 @@ const createNewUser = function(user) {
   .catch(err => console.log(err));
 }
 
-module.exports = { createNewUser };
+const getUser = function(data) {
+  const dbquery = `SELECT * FROM users WHERE email = $1;`
+  return db.
+  query(dbquery, [data.email])
+  .then(result => result.rows[0])
+  .catch(err => console.log(err));
+}
+module.exports = { createNewUser, getUser };
