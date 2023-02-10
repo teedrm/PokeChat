@@ -6,7 +6,11 @@ const app = express();
 const { Server } = require("socket.io");
 const userQueries = require('./db/queries/users');
 
-app.use(cors());
+//setting up cookie
+const cookieSession = require('cookie-session');  
+const session = cookieSession({name: 'session', keys: ["secret"], sameSite: true});
+
+app.use(express.static("public"));
 app.use(express.json());
 app.use(session);
 app.use(cors());

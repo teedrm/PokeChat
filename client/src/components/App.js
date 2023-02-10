@@ -8,7 +8,7 @@ import CreateLobby from "./Lobby/createLobby";
 import CreateUser from "./Lobby/createUser";
 import ChatRoom from "./ChatRoom";
 export default function App() {
-
+const { auth } = useContext(authContext);
 
   return (
     <div>
