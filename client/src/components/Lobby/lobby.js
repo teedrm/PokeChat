@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
-
 
 export default function LobbyPage() {
   const [rooms, setRooms] = useState([
@@ -10,26 +9,27 @@ export default function LobbyPage() {
     { id: 3, name: "John's room"}
   ]);
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleClick = id => {
-    history.push(`/room/${id}`);
+    navigate("/chatroom");
   };
 
   return(
     <LobbyStyle>
-  <div class="lobby-room">
-  <div class="header">
-    <h1>Game Lobby Room</h1>
+  <div className="lobby-room">
+  <div className="header">
+    <h1>Chat Lobby Room</h1>
   </div>
-  <div class="room-list">
+  <div className="room-list">
     <h2>Available Rooms:</h2>
     <ul>
-      <li>
-        {rooms.map(room => (
-          <li key={room.id} onClick={() => handleClick(room.id)}>{room.name}</li>
+      {rooms.map((room) => (
+          <li key={room.id}>
+            {/* <Link to onClick={() => handleClick(room.id)}> {room.name}</Link> */}
+            <Link to={`/chatroom/${room.id}`}>{room.name}</Link>
+          </li>
         ))}
-        </li>
     </ul>
   </div>
   </div>
