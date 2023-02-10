@@ -3,16 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./Register";
 import Login from "./Login";
 import Home from "./Home";
+import LobbyPage from "./Lobby/lobby";
+import CreateLobby from "./Lobby/createLobby";
+import CreateUser from "./Lobby/createUser";
 import ChatRoom from "./ChatRoom";
-import LobbyPage from "./user/lobby";
-import CreateLobby from "./user/createLobby";
-import Chat from "./Chat";
-
-import { authContext } from '../providers/AuthProvider';
-import { useContext } from 'react';
-
 export default function App() {
-const { auth } = useContext(authContext);
+
 
   return (
     <div>
@@ -24,8 +20,7 @@ const { auth } = useContext(authContext);
           <Route path ="/login" element={<Login/>} />
           <Route path ="/lobby" element={<LobbyPage />} />
           <Route path ="/CreLobby" element={<CreateLobby />} />
-          <Route path ="/chatroom" element={<ChatRoom />} />
-          <Route path ="/chat" element={<Chat/>} />
+          <Route path ="/Chatroom" element={<ChatRoom />} />
         </Routes>
       </Router>
 
