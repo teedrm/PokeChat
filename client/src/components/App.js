@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import SignUp from "./Signup/main";
+import Register from "./Register";
 import Login from "./Login";
 import Home from "./Home";
-import LobbyPage from "./Lobby/lobby";
-import CreateLobby from "./Lobby/createLobby";
-import CreateUser from "./Lobby/createUser";
+
+import ChatRoom from "./ChatRoom";
+import LobbyPage from "./user/lobby";
+import CreateLobby from "./user/createLobby";
+
 
 export default function App() {
 
@@ -14,15 +16,19 @@ export default function App() {
     <div>
       <Router>
         <Routes>
-          <Route path ="/" element={<Home/>} />
-          <Route path ="/signup" element={<SignUp/>} />
+
+          <Route path = "/" element={<Home/>} />
+          <Route path ="/signup" element={<Register/>} />
           <Route path ="/login" element={<Login/>} />
           <Route path ="/lobby" element={<LobbyPage />} />
           <Route path ="/CreLobby" element={<CreateLobby />} />
-          <Route path ="/selectAva" element={<CreateUser />} />
+          <Route path ="/chatroom" element={<ChatRoom />} />
+
         </Routes>
       </Router>
 
-    </div>
+    </div> 
   );
+
 }
+

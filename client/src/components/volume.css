@@ -1,0 +1,14 @@
+.volume-div {
+  background-color: white;
+  border-radius: 16px;
+  width: 10px;
+  top: 10%;
+  right: 15%;
+  position: absolute;
+  z-index: 1;
+}
+.volume-div input {
+  -webkit-appearance: slider-vertical;
+  height: 175px;
+  padding: 0 5px;
+}
