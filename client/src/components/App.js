@@ -7,8 +7,6 @@ import LobbyPage from "./Lobby/lobby";
 import CreateLobby from "./Lobby/createLobby";
 import CreateUser from "./Lobby/createUser";
 import ChatRoom from "./ChatRoom";
-import LobbyPage from "./Lobby/lobby";
-import CreateLobby from "./Lobby/createLobby";
 
 
 export default function App() {
