@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 //connection to socket server
 export default function Chatbox(props) {
+  const room = props.room;
 
   const [messages, setMessages] = useState([]);
   const [socket, setSocket] = useState();
@@ -21,6 +22,7 @@ export default function Chatbox(props) {
     }
   };
 
+
   useEffect(() => {
     //connecting to socket
     const socket = io();
@@ -29,6 +31,8 @@ export default function Chatbox(props) {
     socket.on('connect', () => {
       console.log("connected");
     });
+
+    socket.emit("join_room", room);
 
     socket.on("public", (data) => {
       const message = `${data.from} says:  ${data.text}`;

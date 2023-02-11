@@ -1,4 +1,5 @@
 import { useState, useContext } from 'react';
+import { useNavigate } from "react-router-dom";
 // import { authContext } from '../../providers/AuthProvider';
 
 
@@ -12,12 +13,14 @@ export default function LoginForm() {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
   // const { login, user } = useContext(authContext);
+  let navigate = useNavigate();
 
   const login = function(email, password) {
     axios.post("/login", {email, password})
       .then(res => {
         console.log(res.data);
         setUser(res.data);
+        navigate("/lobby")
       });
   };
 
