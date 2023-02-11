@@ -1,29 +1,77 @@
 import React, { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
 
 export default function LobbyPage() {
-  <div class="game-lobby-room">
-  <div class="header">
-    <h1>Game Lobby Room</h1>
-  </div>
-  <div class="room-list">
-    <h2>Available Rooms:</h2>
-    <ul>
-      <li><a href="#">Room 1</a></li>
-      <li><a href="#">Room 2</a></li>
-      <li><a href="#">Room 3</a></li>
-    </ul>
-  </div>
-  <div class="player-list">
-    <h2>Players in Room:</h2>
-    <ul>
-      <li>Player 1</li>
-      <li>Player 2</li>
-      <li>Player 3</li>
-    </ul>
-  </div>
-  </div>
-}
+  const [rooms, setRooms] = useState([
+    { id: 1, name: "Pokemon Center"},
+    { id: 2, name: "Sunshine Beach"},
+    { id: 3, name: "Dark Forest"}
+  ]);
+  const [newRoom, setNewRoom] = useState("");
+  
+  const navigate = useNavigate();
+
+  const handleClick = id => {
+    navigate(`/chatroom${id}`);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    setRooms([...rooms, { id: rooms.length + 1, name: newRoom}]);
+    setNewRoom("");
+  };
+
+  return(
+    <LobbyStyle>
+      <div className="lobby-room">
+        <div className="header">
+          <h1>Chat Lobby Room</h1>
+        </div>
+        <div className="room-list">
+          <h2>Available Rooms:</h2>
+          <ul>
+            {rooms.map((room) => (
+              <li 
+              key={room.id} 
+              onClick={() => handleClick(room.id)}>
+                {console.log("room id", room.id, "room name", room.name)};
+                {/* <Link to = {`chatroom${room.id}`}>{room.name}</Link> */}
+                {room.name}
+              </li>
+            ))}
+          </ul>
+          <form onSubmit={handleSubmit}>
+              <input type="text" value={newRoom} onChange={(event) => setNewRoom(event.target.value)} />
+              <button type="submit" >Create Room</button>
+          </form>
+        </div>
+      </div>
+
+    </LobbyStyle>
+  )};
+
+
+  const LobbyStyle = styled.div`
+  body {
+    background-color: #E0E0E0;
+    font-family: Arial, sans-serif;
+  }
+
+  .lobby-room {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 10px #BDBDBD;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .lobby-room h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-`;
 //   const [rooms, setRooms] = useState([]);
 //   const [players, setPlayers] = useState([]);
 
