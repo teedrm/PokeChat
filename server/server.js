@@ -7,8 +7,8 @@ const { Server } = require("socket.io");
 const userQueries = require('./db/queries/users');
 
 //setting up cookie
-const cookieSession = require('cookie-session');  
-const session = cookieSession({name: 'session', keys: ["secret"], sameSite: true});
+const cookieSession = require('cookie-session');
+const session = cookieSession({ name: 'session', keys: ["secret"], sameSite: true });
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -24,7 +24,7 @@ app.get("/home", (req, res) => {
 app.post("/login", (req, res) => {
   const name = req.body.email;
   //why do we need an id? if it would always be 1
-  const user = {id: 1, name};
+  const user = { id: 1, name };
   req.session.user = user;
   res.json(user);
 });
@@ -55,7 +55,7 @@ const http = app.listen(8000, () => {
 
 const io = new Server(http);
 const clients = {};
-
+const users = [];
 // Allow socket.io to access session
 const wrap = middleware => (socket, next) => middleware(socket.request, {}, next);
 io.use(wrap(session));
@@ -66,11 +66,19 @@ io.on('connection', client => {
 
   console.log("Client Connected!", name, " : ", client.id);
   client.emit("system", `Welcome ${name}`);
-  client.broadcast.emit('system', `${name} has just joined`);
+  // client.broadcast.emit('system', `${name} has just joined`);
 
   // Add this client.id to our clients lookup object
   clients[name] = client.id;
   console.log(clients);
+
+  client.on('join_room', data => {
+    client.join(data);
+    console.log('joined room ',data);
+    users.push({id: client.id, room: data});
+  })
+
+  console.log('users',users);
 
   client.on('message', data => {
     console.log(data);
@@ -78,7 +86,8 @@ io.on('connection', client => {
     const from = name;
 
     if (!to) {
-      client.broadcast.emit('public', { text, from });
+      const user = users.find((user) => user.id === client.id);
+      client.broadcast.to(user.room).emit('public', { text, from });
       client.emit('public', { text, from });
 
       return;

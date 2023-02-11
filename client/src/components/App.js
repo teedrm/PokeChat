@@ -5,7 +5,6 @@ import Login from "./Login";
 import Home from "./Home";
 import LobbyPage from "./Lobby/lobby";
 import CreateLobby from "./Lobby/createLobby";
-import CreateUser from "./Lobby/createUser";
 import ChatRoom from "./ChatRoom";
 
 

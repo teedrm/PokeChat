@@ -8,12 +8,27 @@ import Settings from "./Settings";
 import Volume from "./Volume";
 
 export default function ChatRoom(props) {
-  // const [friends, setFriends] = useState(true);
+  let room_url = "";
   const [state, setState] = useState({
     friends: false,
     settings: false,
     volume: false
   });
+  
+  switch(props.room) {
+    case "center":
+      room_url = "https://prod.spline.design/kIeBNERFD3J58-JX/scene.splinecode";
+      break;
+    case "beach":
+      room_url = "https://prod.spline.design/O4u6Cm1aROtbzPgm/scene.splinecode";
+      break;
+    case "forest":
+      room_url = "https://prod.spline.design/pBzrH-Glx8h7D-Vu/scene.splinecode";
+      break;
+    default:
+      room_url = "https://prod.spline.design/kIeBNERFD3J58-JX/scene.splinecode";
+      break;
+  };
 
   return (
     <div>
@@ -29,10 +44,10 @@ export default function ChatRoom(props) {
         }}
       />
       <ChatRoomStyle>
-        <Spline scene="https://prod.spline.design/kIeBNERFD3J58-JX/scene.splinecode" />
+        <Spline scene={room_url} />
       </ChatRoomStyle>
       <ChatboxStyle>
-        <Chatbox />
+        <Chatbox room={props.room}/>
       </ChatboxStyle>
       {state.friends && <FriendList />}
       {state.settings && <Settings />}
