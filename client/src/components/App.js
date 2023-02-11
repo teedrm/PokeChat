@@ -14,6 +14,7 @@ export default function App() {
     <div>
       <Router>
         <Routes>
+
           <Route path = "/" element={<Home/>} />
           <Route path ="/signup" element={<Register/>} />
         
@@ -28,8 +29,6 @@ export default function App() {
 
     </div> 
   );
+
 }
-
-
-
 
