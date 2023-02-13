@@ -6,6 +6,7 @@ import Home from "./Home";
 import LobbyPage from "./Lobby/lobby";
 import CreateLobby from "./Lobby/createLobby";
 import ChatRoom from "./ChatRoom";
+import Game from "./Game";
 
 export default function App() {
 
@@ -23,6 +24,7 @@ export default function App() {
           <Route path ="/chatroom1" element={<ChatRoom room="center" />} />
           <Route path ="/chatroom2" element={<ChatRoom room="beach" />} />
           <Route path ="/chatroom3" element={<ChatRoom room="forest" />} />
+          <Route path = "/game" element={<Game />} />
         </Routes>
       </Router>
 
