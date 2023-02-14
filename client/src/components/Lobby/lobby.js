@@ -31,7 +31,7 @@ export default function LobbyPage() {
           {/* <h1>Chat Lobby Room</h1> */}
         </div>
         <div className="room-list">
-          <h2>Available Rooms:</h2>
+          <h2 className="available">Available Rooms:</h2>
           <ul>
             {rooms.map((room) => (
               <li className="list-style"
@@ -43,9 +43,9 @@ export default function LobbyPage() {
               </li>
             ))}
           </ul>
-          <form onSubmit={handleSubmit}>
-              <input type="text" value={newRoom} onChange={(event) => setNewRoom(event.target.value)} />
-              <button type="submit" >Create Room</button>
+          <form className="create-room" onSubmit={handleSubmit}>
+              <input className="create-input" type="text" value={newRoom} onChange={(event) => setNewRoom(event.target.value)} />
+              <button className="create-button" type="submit" >Create Room</button>
           </form>
         </div>
       </div>
