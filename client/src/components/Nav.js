@@ -1,6 +1,6 @@
 import { React } from "react";
 import "./navbar.css";
-import { FaHome, FaRegSun, FaVolumeUp, FaUserFriends } from "react-icons/fa";
+import { FaHome, FaRegSun, FaMusic, FaUserFriends } from "react-icons/fa";
 
 export default function Navbar(props) {
   // const [state, setState] = useState({
@@ -24,13 +24,13 @@ export default function Navbar(props) {
               onClick={props.onFriends}
             />
           </li>
-          {/* <li>
-            <FaVolumeUp
-              size={18}
-              volume={props.volume}
-              onClick={props.onVolume}
+          <li>
+            <FaMusic
+              size={16}
+              music={props.music}
+              onClick={props.onMusic}
             />
-          </li> */}
+          </li>
           <li>
             <FaRegSun
               size={18}

@@ -7,6 +7,7 @@ import FriendList from "./FriendList";
 import Navbar from "./Nav";
 import Settings from "./Settings";
 import Volume from "./Volume";
+import Music from "./Music";
 
 export default function ChatRoom(props) {
   let room_url = "";
@@ -14,7 +15,7 @@ export default function ChatRoom(props) {
   const [state, setState] = useState({
     friends: false,
     settings: false,
-    volume: false
+    music: true
   });
   
   switch(props.room) {
@@ -44,8 +45,8 @@ export default function ChatRoom(props) {
         onSettings={() => {
           setState({ ...state, settings: !state.settings });
         }}
-        onVolume={() => {
-          setState({ ...state, volume: !state.volume });
+        onMusic={() => {
+          setState({ ...state, music: !state.music });
         }}
       />
       <ChatRoomStyle>
@@ -56,7 +57,7 @@ export default function ChatRoom(props) {
       </ChatboxStyle>
       {/* {state.friends && <FriendList />} */}
       {state.settings && <Settings />}
-      {state.volume && <Volume />}
+      {state.music && <Music />}
     </div>
   );
 }

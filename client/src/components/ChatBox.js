@@ -8,7 +8,7 @@ import './chatbox.css';
 export default function Chatbox(props) {
   const room = props.room;
 
-  const [messages, setMessages] = useState(["1dddddddddddddddddddddddd23","123","123","123","123","123","123","asd","123","123","ahsd","123"]);
+  const [messages, setMessages] = useState([]);
   const [socket, setSocket] = useState();
   const [text, setText] = useState("");
   const [to, setTo] = useState("");
@@ -94,10 +94,10 @@ export default function Chatbox(props) {
           <button onClick={() => setMessages([])}>Clear</button>
         </div>
       </div>
-      {props.friends && <FriendList className="friendlist" />}
+      {props.friends && <FriendList className="friendlist" name={"juju"} online={["juju", "bobo"]}/>}
     </container>
-
   );
+  //need to pass in the name (current user) and online user list
 }
 
 const TextStyle = styled.div`
