@@ -2,11 +2,13 @@ import { useEffect, useState, useContext } from "react";
 import { authContext } from '../providers/AuthProvider';
 import io from 'socket.io-client';
 import styled from "styled-components";
+import FriendList from "./FriendList";
+import './chatbox.css';
 
 export default function Chatbox(props) {
   const room = props.room;
 
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(["1dddddddddddddddddddddddd23","123","123","123","123","123","123","asd","123","123","ahsd","123"]);
   const [socket, setSocket] = useState();
   const [text, setText] = useState("");
   const [to, setTo] = useState("");
@@ -35,7 +37,7 @@ export default function Chatbox(props) {
 
     socket.on("public", (data) => {
       const message = `${data.from} says:  ${data.text}`;
-      if(data.text) {
+      if (data.text) {
         setMessages(prev => [...prev, message]);
         setText("");
       }
@@ -59,12 +61,10 @@ export default function Chatbox(props) {
     );
   });
   return (
-    <div>
-      <ChatboxStyle>
-        <ul>{listOfMessages}</ul>
-      </ChatboxStyle>
-      <MessageInput>
-        <div className="message-box">
+    <container id="chat-friend">
+      <div class="chat-box">
+        <div id="render-message"><ul>{listOfMessages}</ul></div>
+        <div class="message-box">
           <input
             type="text"
             value={text}
@@ -79,8 +79,10 @@ export default function Chatbox(props) {
           </button>
           <button onClick={() => setMessages([])}>Clear</button>
         </div>
-      </MessageInput>
-    </div>
+      </div>
+      {props.friends && <FriendList className="friendlist" />}
+    </container>
+
   );
 }
 
@@ -88,48 +90,4 @@ const TextStyle = styled.div`
   liststyle: "none";
   width: 100%;
   word-break: break-all;
-`;
-
-const ChatboxStyle = styled.div`
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  overflow: auto;
-  max-height: 28vh;
-  margin-bottom: 50px;
-
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-`;
-
-const MessageInput = styled.div`
-  background: rgba(255, 255, 255, 0.87);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px);
-  border: 1px solid rgba(255, 255, 255, 1);
-
-  width: 100%;
-  position: absolute;
-  opacity: 0.85;
-  bottom: 0;
-  margin-top: 50px;
-  display: flex;
-  /* overflow: hidden; */
 `;
