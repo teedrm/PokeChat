@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import "./lobby.css"
 
 
 export default function LobbyPage() {
@@ -27,16 +28,16 @@ export default function LobbyPage() {
     <LobbyStyle>
       <div className="lobby-room">
         <div className="header">
-          <h1>Chat Lobby Room</h1>
+          {/* <h1>Chat Lobby Room</h1> */}
         </div>
         <div className="room-list">
           <h2>Available Rooms:</h2>
           <ul>
             {rooms.map((room) => (
-              <li 
+              <li className="list-style"
               key={room.id} 
               onClick={() => handleClick(room.id)}>
-                {console.log("room id", room.id, "room name", room.name)};
+                {console.log("room id", room.id, "room name", room.name)}
                 {/* <Link to = {`chatroom${room.id}`}>{room.name}</Link> */}
                 {room.name}
               </li>
@@ -59,19 +60,19 @@ export default function LobbyPage() {
     font-family: Arial, sans-serif;
   }
 
-  .lobby-room {
-    width: 80%;
-    margin: 0 auto;
-    background-color: #FFFFFF;
-    box-shadow: 0px 0px 10px #BDBDBD;
-    border-radius: 10px;
-    padding: 20px;
-  }
+  // .lobby-room {
+  //   width: 80%;
+  //   margin: 0 auto;
+  //   background-color: #FFFFFF;
+  //   box-shadow: 0px 0px 10px #BDBDBD;
+  //   border-radius: 10px;
+  //   padding: 20px;
+  // }
 
-  .lobby-room h1 {
-    text-align: center;
-    font-size: 36px;
-    margin-`;
+  // .lobby-room h1 {
+  //   text-align: center;
+  //   font-size: 36px;
+  //   margin-`;
 //   const [rooms, setRooms] = useState([]);
 //   const [players, setPlayers] = useState([]);
 
