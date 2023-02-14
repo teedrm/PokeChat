@@ -143,6 +143,26 @@ function init() {
       image: platformSmallTallImage
     }),
     new Platform({
+      x: platformImage.width * 7 + 300,
+      y: 270,
+      image: platformSmallTallImage
+    }),
+    new Platform({
+      x: platformImage.width * 8 + 300,
+      y: 270,
+      image: platformSmallTallImage
+    }),
+    new Platform({
+      x: platformImage.width * 9 + 300,
+      y: 320,
+      image: platformSmallTallImage
+    }),
+    new Platform({
+      x: platformImage.width * 13 + 150,
+      y: 320,
+      image: platformSmallTallImage
+    }),
+    new Platform({
       x: -1, y: 470,
       image: platformImage
     }),
@@ -151,7 +171,7 @@ function init() {
       image: platformImage
     }),
     new Platform({
-      x: platformImage.width * 2 + 100, y: 470,
+      x: platformImage.width * 2 + 150, y: 470,
       image: platformImage
     }),
     new Platform({
@@ -164,6 +184,18 @@ function init() {
     }),
     new Platform({
       x: platformImage.width * 5 + 650-2, y: 470,
+      image: platformImage
+    }),
+    new Platform({
+      x: platformImage.width * 10 + 300, y: 470,
+      image: platformImage
+    }),
+    new Platform({
+      x: platformImage.width * 10 + 400, y: 120,
+      image: platformImage
+    }),
+    new Platform({
+      x: platformImage.width * 12 -100 , y: 320,
       image: platformImage
     })
   ];
@@ -238,7 +270,7 @@ function animate() {
   }
 
   // win condition
-  if (scrollOffset > platformImage.width * 5 + 420-2) {
+  if (scrollOffset > platformImage.width * 13 + 150) {
     console.log('you win');
   }
 
