@@ -29,8 +29,12 @@ app.post("/login", (req, res) => {
   res.json(user);
 });
 
-
-//testing
+// Logout: remove user object from session
+app.post("/api/logout", (req, res) => {
+  console.log("logout:", req.session.user);
+  req.session = null;
+  res.status(204).send();
+});
 
 app.post("/signup", (req, res) => {
   const data = req.body;
@@ -65,8 +69,6 @@ io.on('connection', client => {
   const name = session?.user?.name;
 
   console.log("Client Connected!", name, " : ", client.id);
-  client.emit("system", `Welcome ${name}`);
-  // client.broadcast.emit('system', `${name} has just joined`);
 
   // Add this client.id to our clients lookup object
   clients[name] = client.id;
@@ -76,9 +78,16 @@ io.on('connection', client => {
     client.join(data);
     console.log('joined room ',data);
     users.push({id: client.id, room: data});
+    //system message to notify user joined
+    client.broadcast.to(data).emit('system', {message: `${name} has just joined`, name: Object.keys(clients)});
+    
+    // const online_users = users.filter(user => user.room === data);
+    // console.log('online_users',online_users);
+    // client.broadcast.to(data).emit('online', online_users);
+    // client.to(data).emit('online', online_users);
   })
 
-  console.log('users',users);
+  
 
   client.on('message', data => {
     console.log(data);
@@ -100,7 +109,8 @@ io.on('connection', client => {
 
   client.on("disconnect", () => {
     console.log("Client Disconnected", name, " : ", client.id);
-    client.broadcast.emit('system', `${name} has just left`);
+    const user = users.find((user) => user.id === client.id);
+    client.broadcast.to(user.room).emit('system', {message: `${name} has just left`});
     delete clients[name];
   });
 

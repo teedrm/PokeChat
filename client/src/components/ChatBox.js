@@ -12,6 +12,7 @@ export default function Chatbox(props) {
   const [socket, setSocket] = useState();
   const [text, setText] = useState("");
   const [to, setTo] = useState("");
+  const [users, setUsers] = useState([]);
 
   const send = function () {
     socket.emit("message", { text, to });
@@ -43,7 +44,20 @@ export default function Chatbox(props) {
       }
     });
 
+    //welcome message
+    socket.on("system", data => {
+      setMessages(prev => [...prev, data.message]);
+      if(data.name) {
+        setUsers(data.name);
+        console.log("name", data.name)
+        console.log("online users", users)
+      }
+    })
 
+    //online users
+    socket.on("online", online_users => {
+      console.log(online_users);
+    })
 
     //prevents memory leak
     return () => socket.disconnect();
