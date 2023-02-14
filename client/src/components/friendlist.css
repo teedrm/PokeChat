@@ -1,13 +1,15 @@
 .friends-container {
-  background: white;
+  background: rgba(255, 255, 255, 0.795);
+  border: solid rgb(172, 248, 232);
   border-radius: 12px;
   padding: 5px;
-  width: 15%;
+  width: 12%;
   max-height: 50vh;
   position: absolute;
   z-index: 1;
   bottom: 0;
   right: 0;
+  margin-right: 10px;
 }
 
 .add-friend {
@@ -18,7 +20,7 @@
   margin-top: 10px;
 }
 .icon {
-  margin: 3px 6px 0 10px;
+  margin: 5px 6px 0 15px;
 }
 .add-friend input {
   width: 100%;
@@ -44,4 +46,12 @@
 }
 .friends-container li :hover {
   background-color: #ddd;
+}
+
+.divider {
+  border: none;
+  border-bottom: 2px solid rgb(56, 56, 56);
+  margin-top: 6px;
+  margin-left: 10px;
+  width: 90%;
 }

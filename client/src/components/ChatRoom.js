@@ -52,9 +52,9 @@ export default function ChatRoom(props) {
         <Spline scene={room_url} />
       </ChatRoomStyle>
       <ChatboxStyle>
-        <Chatbox room={props.room}/>
+        <Chatbox room={props.room} friends={state.friends}/>
       </ChatboxStyle>
-      {state.friends && <FriendList />}
+      {/* {state.friends && <FriendList />} */}
       {state.settings && <Settings />}
       {state.volume && <Volume />}
     </div>
