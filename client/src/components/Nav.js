@@ -12,7 +12,10 @@ export default function Navbar(props) {
       <div className="nav-elements">
         <ul>
           <li>
-            <FaHome size={18} />
+            <FaHome 
+              size={18}
+              onClick={props.onHome}
+             />
           </li>
           <li>
             <FaUserFriends
@@ -21,13 +24,13 @@ export default function Navbar(props) {
               onClick={props.onFriends}
             />
           </li>
-          <li>
+          {/* <li>
             <FaVolumeUp
               size={18}
               volume={props.volume}
               onClick={props.onVolume}
             />
-          </li>
+          </li> */}
           <li>
             <FaRegSun
               size={18}
