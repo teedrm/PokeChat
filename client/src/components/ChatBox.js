@@ -8,7 +8,7 @@ import './chatbox.css';
 export default function Chatbox(props) {
   const room = props.room;
 
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(["1dddddddddddddddddddddddd23","123","123","123","123","123","123","asd","123","123","ahsd","123"]);
   const [socket, setSocket] = useState();
   const [text, setText] = useState("");
   const [to, setTo] = useState("");
