@@ -1,6 +1,7 @@
 import Spline from "@splinetool/react-spline";
 import styled from "styled-components";
 import { React, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Chatbox from "./ChatBox";
 import FriendList from "./FriendList";
 import Navbar from "./Nav";
@@ -9,6 +10,7 @@ import Volume from "./Volume";
 
 export default function ChatRoom(props) {
   let room_url = "";
+  let navigate = useNavigate();
   const [state, setState] = useState({
     friends: false,
     settings: false,
@@ -33,6 +35,9 @@ export default function ChatRoom(props) {
   return (
     <div>
       <Navbar
+        onHome = { () => {
+          navigate("/lobby");
+        }}
         onFriends={() => {
           setState({ ...state, friends: !state.friends });
         }}
