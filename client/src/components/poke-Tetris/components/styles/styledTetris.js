@@ -2,15 +2,15 @@ import styled from "styled-components";
 import bgImage from "../../img/pokeball2.jpeg";
 
 export const StyledTetrisWrapper = styled.div`
-  width: 60vw;
-  height: 80vh;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   // background-color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
-  transform: scale(0.9)
-  `;
-  // background: url(${bgImage}) #000;
+  transform: scale(0.8);
+`;
+// background: url(${bgImage}) #000;
 
 export const StyledTetris = styled.div`
   display: flex;
