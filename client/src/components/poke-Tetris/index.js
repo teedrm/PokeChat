@@ -7,7 +7,7 @@ import PokeTetris from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Poke-Tetris />
+    <PokeTetris />
   </React.StrictMode>
 );
 

@@ -10,7 +10,7 @@ export default function PokeTetris() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowTetris(true);
-    }, 15000);
+    }, 17000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -31,11 +31,12 @@ const Wrapper = styled.div`
 const GameboyStyle = styled.div`
   width: 22%;
   max-height: 15vh;
-  margin-left: 300px;
+  // margin-left: 400px;
   position: absolute;
   z-index: 1;
   bottom: 86%;
-  right: 48vw;
+  right: 45vw;
+  font-family: 'Pixel', sans-serif;
 `;
 
 const SplineWrapper = styled.div`

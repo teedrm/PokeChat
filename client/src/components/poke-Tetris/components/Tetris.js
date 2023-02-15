@@ -38,12 +38,6 @@ export default function Tetris() {
     drop();
   };
 
-  // const spacePlayer = (dir) => {
-  //   while (!checkCollision(player, stage, { x: 0, y: 1 })) {
-  //     updatePlayerPos({ x: 0, y: 1, collided: false });
-  //   }
-  // }
-
   const startGame = () => {
     console.log("test");
 
@@ -152,9 +146,5 @@ const Title = styled.div`
   display: flex;
   align-items: left;
   color: ${(props) => (props.gameOver ? "red" : "blue")};
-  font-family: ;
-`;
-
-const GameboyStyle = styled.div`
-
+  font-family: 'Pixel', sans-serif;
 `;
