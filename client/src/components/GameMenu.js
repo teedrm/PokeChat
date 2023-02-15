@@ -1,14 +1,17 @@
 import React from "react";
 import "./gamemenu.css";
 
-export default function Settings() {
+export default function GameMenu(props) {
  
   return (
-    <container className="settings-container">
+    <container className="game-container">
       <div>
         <div className="game-menu">Game Menu</div>
         <ul className="games-list">
-            <li className="games" onClick={()=> window.open("/game.html")}>
+            <li className="games" onClick={()=>{
+              window.open("/game.html");
+              props.onGame();
+              }}>
                 <img className="games-images" src="https://github.com/teedrm/final/blob/games-path/client/public/games-images/pokemonjump.png?raw=true"/>
                 <p>PokeJump</p>
             </li>
