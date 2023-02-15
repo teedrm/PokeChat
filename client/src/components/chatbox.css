@@ -15,6 +15,9 @@
 #render-message ul {
   margin-bottom: 40px;
 }
+#private-message {
+  width: 30px;
+}
 .chat-box {
   max-height: 28vh;
   max-width: 25vw;

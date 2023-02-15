@@ -83,6 +83,12 @@ export default function Chatbox(props) {
         <div id="render-message"><ul>{listOfMessages}</ul></div>
         <div class="message-box">
           <input
+            id="private-message"
+             onChange={event => setTo(event.target.value)}
+             value={to}
+             placeholder="Recipient"
+          />
+          <input
             type="text"
             value={text}
             onChange={e => setText(e.target.value)}
