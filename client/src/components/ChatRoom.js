@@ -8,6 +8,8 @@ import Navbar from "./Nav";
 import Settings from "./Settings";
 import Volume from "./Volume";
 import Music from "./Musicplayer/App";
+import GengarPlay from "./GengarPlay";
+import GameMenu from "./GameMenu";
 
 export default function ChatRoom(props) {
   let room_url = "";
@@ -15,7 +17,8 @@ export default function ChatRoom(props) {
   const [state, setState] = useState({
     friends: false,
     settings: false,
-    music: true
+    music: true,
+    game: false
   });
   
   switch(props.room) {
@@ -49,6 +52,13 @@ export default function ChatRoom(props) {
           setState({ ...state, music: !state.music });
         }}
       />
+      <GengarContainer>
+        <GengarPlay 
+          onGame={() => {
+            setState({...state, game: !state.game})
+          }}
+        />
+      </GengarContainer>
       <ChatRoomStyle>
         <Spline scene={room_url} />
       </ChatRoomStyle>
@@ -87,4 +97,15 @@ const ChatRoomStyle = styled.div`
   position: relative;
   top: 0;
   left: 0;
+`;
+
+const GengarContainer = styled.div`
+position: absolute;
+z-index: 1;
+height: 210px;
+width: 200px;
+margin-left: 100px;
+margin-top: 420px;
+align-item: center;
+padding-top:10px;
 `;
