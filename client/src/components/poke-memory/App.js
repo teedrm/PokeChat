@@ -76,7 +76,7 @@ export default function PokeMemory() {
   };
 
   return (
-    <body>
+    <body className="memory-body">
       <img src={logo} />
       <div className="card-grid">
         {cards.map((card) => (
