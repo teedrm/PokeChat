@@ -7,7 +7,7 @@ import FriendList from "./FriendList";
 import Navbar from "./Nav";
 import Settings from "./Settings";
 import Volume from "./Volume";
-import Music from "./Music";
+import Music from "./Musicplayer/App";
 import GengarPlay from "./GengarPlay";
 import GameMenu from "./GameMenu";
 
@@ -67,8 +67,7 @@ export default function ChatRoom(props) {
       </ChatboxStyle>
       {/* {state.friends && <FriendList />} */}
       {state.settings && <Settings />}
-      {state.music && <Music />}
-      {state.game && <GameMenu />}
+      {state.music && <Music className="music-player"/>}
     </div>
   );
 }
