@@ -20,7 +20,7 @@ export default function ChatRoom(props) {
     music: true,
     game: false
   });
-  
+
   switch(props.room) {
     case "center":
       room_url = "https://prod.spline.design/kIeBNERFD3J58-JX/scene.splinecode";
@@ -53,7 +53,7 @@ export default function ChatRoom(props) {
         }}
       />
       <GengarContainer>
-        <GengarPlay 
+        <GengarPlay
           onGame={() => {
             setState({...state, game: !state.game})
           }}
