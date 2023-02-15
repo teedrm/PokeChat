@@ -30,7 +30,7 @@ const App = () => {
 
 
   return (
-    <div className="App">
+    <div className="music-app">
       <audio src={currentSong.url} ref={audioElem} onTimeUpdate={onPlaying} />
       <Player songs={songs} setSongs={setSongs} isplaying={isplaying} setisplaying={setisplaying} audioElem={audioElem} currentSong={currentSong} setCurrentSong={setCurrentSong} />
     </div>
