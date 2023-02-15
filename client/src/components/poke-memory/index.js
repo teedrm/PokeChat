@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Game from './App';
+import PokeMemory from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Game />
+    <PokeMemory />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -39,15 +39,6 @@ const GameboyStyle = styled.div`
   z-index: 1;
   bottom: 76%;
   right: 45vw;
-  // left: 20%;
-  // &:hover {
-  //   background: rgba(255, 255, 255, 0.6);
-  //   // border-radius: 16px;
-  //   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  //   backdrop-filter: blur(7.7px);
-  //   -webkit-backdrop-filter: blur(7.7px);
-  //   border: 1px solid rgba(255, 255, 255, 0.3);
-  // }
 `;
 
 const SplineWrapper = styled.div`
@@ -58,7 +49,7 @@ const SplineWrapper = styled.div`
   left: 0;
 `;
 
-export default function App() {
+export default function PokeTetris() {
   const [showTetris, setShowTetris] = useState(false);
 
   useEffect(() => {
