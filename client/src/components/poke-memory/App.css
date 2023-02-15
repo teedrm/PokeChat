@@ -1,0 +1,133 @@
+@import url('http://fonts.googleapis.com/css?family=Monteserrat:600&display=swap');
+
+/* main */
+body {
+  max-width: 860px;
+  margin: 40px auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.turn {
+  color: #ffd740;
+}
+
+
+/* card grid */
+.card-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+
+
+
+/* Title : pokemory */
+.box {
+    display: flex;
+}
+
+.box .inner {
+    width: 400px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 4em;
+    font-family: sans-serif;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.box .inner:first-child {
+    background-color: rgba(255, 215, 64, 0.693);
+    color: rgb(42, 26, 218);
+    transform-origin: right;
+    transform: perspective(100px) rotateY(-15deg);
+}
+
+.box .inner:last-child {
+    background-color: rgb(180, 15, 15);
+    color: #ffd740;
+    transform-origin: left;
+    transform: perspective(100px) rotateY(15deg);
+}
+
+.box .inner span {
+    position: absolute;
+    animation: marquee 5s linear infinite;
+}
+
+.box .inner:first-child span {
+    animation-delay: 2.5s;
+    left: -100%;
+}
+
+@keyframes marquee {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+/* BGM */
+/*
+body .playsound {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffd740;
+}
+
+body .playsound .songbox {
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+
+body .playsound .songbox button {
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .playsound .songbox button:before,
+body .playsound .songbox button:after {
+  position: absolute;
+  content: "PLAY";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+body .playsound .songbox button:before {
+  color: #ffd740;
+  background: #000;
+  transform: rotateY(0deg) translateZ(25px);
+}
+
+body .playsound .songbox button:after {
+  color: #000;
+  transform: rotateX(90deg) translateZ(25px);
+}
+
+body .playsound .songbox button:hover {
+  transform: translateZ(-25px) rotateX(-90deg)
+} */

@@ -1,0 +1,72 @@
+.pushable {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  background-color: #fc5c7d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  overflow: hidden;
+}
+
+.pushable span {
+  position: relative;
+  z-index: 1;
+}
+
+.pushable::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://cdn3.iconfinder.com/data/icons/navigation-and-menus-2/32/menu-512.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease-out;
+}
+
+.pushable:hover::before {
+  transform: scale(1.2);
+}
+
+
+
+/* BGM */
+
+.play-pause, .stop {
+  display: inline-block;
+  padding: 10px;
+  background-color: #fc5c7d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.play-pause:hover, .stop:hover {
+  background-color: #fd8c9a;
+}
+
+.play-pause.pause {
+  background-color: #6c5ce7;
+}
+
+.play-pause.pause:hover {
+  background-color: #8b7de1;
+}
+
+.stop {
+  margin-left: 10px;
+}
+
+.stop:hover {
+  background-color: #ff5e57;
+}
