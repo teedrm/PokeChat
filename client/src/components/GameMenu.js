@@ -18,11 +18,11 @@ export default function Settings() {
             </li>
             <li className="games" onClick={()=> window.open("/tetris")}>
             <img className="games-images" src="https://github.com/teedrm/final/blob/master/client/public/img/tetris.png?raw=true" />
-                <p>PokeCrush</p>
+                <p>PokeTetris</p>
             </li>
             <li className="games" onClick={()=> window.open("/memoryGame")}>
             <img className="games-images" src="https://github.com/teedrm/final/blob/master/client/public/img/memory.png?raw=true" />
-                <p>PokeCrush</p>
+                <p>PokeMemory</p>
             </li>
           </ul>
       </div>
