@@ -44,7 +44,7 @@ export default function Lobby() {
             ))}
           </ul>
           <form className="create-room" onSubmit={handleSubmit}>
-              <input className="create-input" type="text" value={newRoom} onChange={(event) => setNewRoom(event.target.value)} />
+              <input placeholder="Type in room name" className="create-input" type="text" value={newRoom} onChange={(event) => setNewRoom(event.target.value)} />
               <button className="create-button" type="submit" >Create Room</button>
           </form>
         </div>
