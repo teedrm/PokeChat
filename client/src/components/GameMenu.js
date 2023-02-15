@@ -16,11 +16,11 @@ export default function Settings() {
                 <img className="games-images" src="https://github.com/teedrm/final/blob/games-path/client/public/games-images/pokecrush.png?raw=true" />
                 <p>PokeCrush</p>
             </li>
-            <li className="games" onClick={()=> window.open("/pokegame")}>
+            <li className="games" onClick={()=> window.open("/tetris")}>
             <img className="games-images" src="https://github.com/teedrm/final/blob/games-path/client/public/games-images/pokecrush.png?raw=true" />
                 <p>PokeCrush</p>
             </li>
-            <li className="games" onClick={()=> window.open("/pokegame")}>
+            <li className="games" onClick={()=> window.open("/memoryGame")}>
             <img className="games-images" src="https://github.com/teedrm/final/blob/games-path/client/public/games-images/pokecrush.png?raw=true" />
                 <p>PokeCrush</p>
             </li>
