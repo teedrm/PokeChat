@@ -12,11 +12,11 @@ export const StyledStartButton = styled.button`
   border-radius: 20px;
   color: red;
   background: #333;
-  font-family: Pixel, Arial, Helvetica, sans-serif;
   font-size: 1rem;
   outline: none;
   cursor: pointer;
 
   border: 5px solid #200a3e;
   transform: scale(0.8);
+  font-family: 'Pixel', sans-serif;
 `;
