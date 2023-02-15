@@ -68,6 +68,7 @@ export default function ChatRoom(props) {
       {/* {state.friends && <FriendList />} */}
       {state.settings && <Settings />}
       {state.music && <Music className="music-player"/>}
+      {state.game && <GameMenu />}
     </div>
   );
 }
