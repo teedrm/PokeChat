@@ -79,8 +79,8 @@ io.on('connection', client => {
     users.push({id: client.id, room: data, name});
     console.log(users);
     //system message to notify user joined
-    io.in(data).emit('system', {message: `${name} has just joined`, users});
-
+    io.in(data).emit('system', {message: `${name} has just joined`});
+    io.emit('system',{users});
     
     // const online_users = users.filter(user => user.room === data);
     // console.log('online_users',online_users);
@@ -115,7 +115,8 @@ io.on('connection', client => {
     if (index > -1) { // only splice array when item is found
       const user = users[index];
       users.splice(index, 1); // 2nd parameter means remove one item only
-      io.in(user.room).emit('system', {message: `${name} has just left`, users});
+      io.in(user.room).emit('system', {message: `${name} has just left`});
+      io.emit('system',{users});
     }
   });
 
