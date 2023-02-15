@@ -71,15 +71,16 @@ io.on('connection', client => {
   console.log("Client Connected!", name, " : ", client.id);
 
   // Add this client.id to our clients lookup object
-  clients[name] = client.id;
+  clients[client.id] = name;
   console.log(clients);
 
   client.on('join_room', data => {
     client.join(data);
-    console.log('joined room ',data);
-    users.push({id: client.id, room: data});
+    users.push({id: client.id, room: data, name});
+    console.log(users);
     //system message to notify user joined
-    client.broadcast.to(data).emit('system', {message: `${name} has just joined`, name: Object.keys(clients)});
+    io.in(data).emit('system', {message: `${name} has just joined`, users});
+
     
     // const online_users = users.filter(user => user.room === data);
     // console.log('online_users',online_users);
@@ -96,22 +97,26 @@ io.on('connection', client => {
 
     if (!to) {
       const user = users.find((user) => user.id === client.id);
-      client.broadcast.to(user.room).emit('public', { text, from });
-      client.emit('public', { text, from });
+      io.in(user.room).emit('public', { text, from });
 
       return;
     }
 
-    const id = clients[to];
+    const id = clients[to]; //const id = to
     console.log(`Sending message to ${to}:${id}`);
     io.to(id).emit("private", { text, from });
   });
 
   client.on("disconnect", () => {
     console.log("Client Disconnected", name, " : ", client.id);
-    const user = users.find((user) => user.id === client.id);
-    client.broadcast.to(user.room).emit('system', {message: `${name} has just left`});
-    delete clients[name];
+
+    delete clients[client.id];
+    const index = users.findIndex(user => user.id === client.id);
+    if (index > -1) { // only splice array when item is found
+      const user = users[index];
+      users.splice(index, 1); // 2nd parameter means remove one item only
+      io.in(user.room).emit('system', {message: `${name} has just left`, users});
+    }
   });
 
 })

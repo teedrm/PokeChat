@@ -4,12 +4,12 @@ import SplineScene from "./Forms/SplineScene-Greninjia";
 import LoginForm from "./Forms/LoginForm";
 import style from "styled-components";
 
-const Login = () => {
+const Login = (props) => {
 
     return (
         <Wrapper>
             <FormContainer>
-                <LoginForm />
+                <LoginForm {...props}/>
             </FormContainer>
             <SplineContainer>
                 <SplineScene />

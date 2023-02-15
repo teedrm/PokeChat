@@ -14,6 +14,7 @@ export default function Chatbox(props) {
   const [to, setTo] = useState("");
   const [users, setUsers] = useState([]);
 
+
   const send = function () {
     socket.emit("message", { text, to });
   };
@@ -47,10 +48,10 @@ export default function Chatbox(props) {
     //welcome message
     socket.on("system", data => {
       setMessages(prev => [...prev, data.message]);
-      if(data.name) {
-        setUsers(data.name);
-        console.log("name", data.name)
-        console.log("online users", users)
+      console.log("system", data);
+      if(data.users) {
+        setUsers(data.users);
+        console.log("online users", data.users)
       }
     })
 
@@ -60,7 +61,9 @@ export default function Chatbox(props) {
     })
 
     //prevents memory leak
-    return () => socket.disconnect();
+    return () => {socket.disconnect();
+    console.log("disconnecting..");
+    }
 
   }, []);
 
@@ -94,7 +97,7 @@ export default function Chatbox(props) {
           <button onClick={() => setMessages([])}>Clear</button>
         </div>
       </div>
-      {props.friends && <FriendList className="friendlist" name={"juju"} online={["juju", "bobo"]}/>}
+      {props.friends && <FriendList className="friendlist" online={users} user={props.user}/>}
     </container>
   );
   //need to pass in the name (current user) and online user list

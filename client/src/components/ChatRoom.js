@@ -53,7 +53,7 @@ export default function ChatRoom(props) {
         <Spline scene={room_url} />
       </ChatRoomStyle>
       <ChatboxStyle>
-        <Chatbox room={props.room} friends={state.friends}/>
+        <Chatbox room={props.room} friends={state.friends} user={props.user}/>
       </ChatboxStyle>
       {/* {state.friends && <FriendList />} */}
       {state.settings && <Settings />}
