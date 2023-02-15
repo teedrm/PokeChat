@@ -23,9 +23,9 @@ export default function App() {
           <Route path ="/login" element={<Login user={user} setUser={setUser}/>} />
           <Route path ="/lobby" element={<LobbyPage />} />
           <Route path ="/CreLobby" element={<CreateLobby />} />
-          <Route path ="/chatroom1" element={<ChatRoom room="center" />} />
+          <Route path ="/chatroom1" element={<ChatRoom room="center" user={user}/>} />
           <Route path ="/chatroom2" element={<ChatRoom room="beach" user={user}/>} />
-          <Route path ="/chatroom3" element={<ChatRoom room="forest" />} />
+          <Route path ="/chatroom3" element={<ChatRoom room="forest" user={user}/>} />
           <Route path ="/pokegame" element={<Pokegame />} />
         </Routes>
       </Router>
