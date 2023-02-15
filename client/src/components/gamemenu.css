@@ -1,0 +1,70 @@
+.settings-container {
+    background: rgba(255, 255, 255, 0.918);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    border: solid rgb(172, 70, 255);
+    padding: 5px;
+    width: 45%;
+    height: 30%;
+    position: absolute;
+    z-index: 1;
+    top: 35%;
+    left: 28%;
+  }
+  
+  .logout-button {
+    background-color: rgb(150, 107, 252);
+    color: white;
+    font-size: 20px;
+    width: 10vw;
+    height: 5vh;
+    font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-left: 95px;
+    align-items: center;
+  }
+  
+  .game-menu{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 30px;
+    padding-left: 42%;
+  }
+.games-list {
+  display: flex;
+  justify-content: space-around;
+  padding-left: -5px;
+}
+
+.games-list p{
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+  .games {
+    list-style: none;
+    cursor: pointer;
+  
+  }
+
+  .games-images {
+    width: 150px;
+    height: 150px;
+    transition: transform .2s;
+    border-radius: 15px;
+  }
+
+  .games-images:hover {
+    transform: scale(1.2);
+  }
