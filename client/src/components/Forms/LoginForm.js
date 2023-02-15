@@ -8,10 +8,10 @@ import axios from 'axios';
 import "./loginform.css"
 
 
-export default function LoginForm() {
+export default function LoginForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
+  const {user, setUser} = props;
   // const { login, user } = useContext(authContext);
   let navigate = useNavigate();
 
