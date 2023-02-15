@@ -10,10 +10,10 @@ export default function FriendList(props) {
     if(user.name !== props.user.name) {
       return (
         <li>
-            <Online />
+            <Online className="online-status"/>
             <FaUserAlt size={11} className="icon" key={i}/>
-            <div>{user.name}</div>
-            <div>{user.room}</div>
+            <div className="online-username">{user.name}</div>
+            <div className="online-room">{user.room}</div>
         </li>
       );
     }
@@ -25,7 +25,7 @@ export default function FriendList(props) {
   return (
     <div className="friends-container">
       <div className="myself">
-        <TbPokeball size={20} className="icon" />
+        <TbPokeball size={20} className="user-icon" />
         <div class="myself-name">{props.user.name}</div>
       </div>
       <div class="divider">
