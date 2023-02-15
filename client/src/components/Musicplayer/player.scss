@@ -1,0 +1,82 @@
+.player_container
+{
+    width: 200px;
+    height: 70px;
+    padding: 10px;
+    border-radius: 20px;
+    color: rgb(218, 218, 218);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    >*
+    {
+        padding: -10px;
+        color: rgb(0, 0, 0);
+    }
+
+    .title{
+        font-size: 12px;
+    }
+    .navigation{
+        width: 100%;
+
+
+        .navigation_wrapper
+        {
+            min-width: 100%;
+            background-color: rgba(149, 149, 149, 0.781);
+            height: 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            
+            .seek_bar{
+                width: 0;
+                height: 100%;
+                background-color: rgb(0, 0, 0);
+                border-radius: 30px;
+            }
+
+        }
+    }
+    .controls{
+        font-size: inherit;
+        display: flex;
+        align-items: center;
+
+        .btn_action
+        {
+            font-size: 20px;
+            margin: 0 1rem;
+            cursor: pointer;
+
+            &:hover{
+            color: rgb(167, 167, 167);
+        }
+
+        }
+        
+        .main
+        {
+            font-size: 30px;
+            
+        }
+        
+    }
+}
+
+.App {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 1;
+    margin-top: 5px;
+    margin-right: 27px;
+}
