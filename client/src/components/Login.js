@@ -1,21 +1,33 @@
+import React, { useState } from "react";
 
-import Spline from "@splinetool/react-spline";
 import SplineScene from "./Forms/SplineScene-Greninjia";
 import LoginForm from "./Forms/LoginForm";
 import style from "styled-components";
+import Loader from "./Loader";
+
+// const SplineScene = React.lazy(() => import("./Forms/SplineScene-Greninjia"));
 
 const Login = (props) => {
-
-    return (
-        <Wrapper>
-            <FormContainer>
-                <LoginForm {...props}/>
-            </FormContainer>
-            <SplineContainer>
-                <SplineScene />
-            </SplineContainer>
-        </Wrapper>
-    );
+  const [loaded, setLoaded] = useState(false);
+  function onLoad() {
+    setLoaded(true);
+  }
+  return (
+    <div>
+      {!loaded && <div className="loading"><div className="words">Loading...</div><Loader /></div>}
+      <Wrapper>
+        {loaded && (
+          <FormContainer>
+            <LoginForm {...props} />
+          </FormContainer>
+        )}
+        <SplineContainer>
+          <SplineScene onLoad={onLoad} />
+          {/* {!loaded && <h1>loading...</h1>} */}
+        </SplineContainer>
+      </Wrapper>
+    </div>
+  );
 };
 
 const Wrapper = style.div`
@@ -37,7 +49,6 @@ background: rgba(255, 255, 255, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.5);
   height: 60%;
   margin-top: 20%;`;
-
 
 const SplineContainer = style.div`
   position: relative;

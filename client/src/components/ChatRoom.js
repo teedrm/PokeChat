@@ -10,6 +10,7 @@ import Volume from "./Volume";
 import Music from "./Musicplayer/App";
 import GengarPlay from "./GengarPlay";
 import GameMenu from "./GameMenu";
+import Loader from "./Loader";
 
 export default function ChatRoom(props) {
   let room_url = "";
@@ -17,9 +18,15 @@ export default function ChatRoom(props) {
   const [state, setState] = useState({
     friends: false,
     settings: false,
-    music: true,
-    game: false
+    music: false,
+    game: false,
+    loaded: false
   });
+
+
+  function onLoad() {
+    setState({...state, loaded: true})
+  }
 
   switch(props.room) {
     case "center":
@@ -38,7 +45,9 @@ export default function ChatRoom(props) {
 
   return (
     <div>
-      <Navbar
+       {!state.loaded && <div className="loading"><div className="words">Loading...</div><Loader /></div>}
+    <div>
+      {state.loaded && <Navbar
         onHome = { () => {
           navigate("/lobby");
         }}
@@ -51,20 +60,20 @@ export default function ChatRoom(props) {
         onMusic={() => {
           setState({ ...state, music: !state.music });
         }}
-      />
+      />}
       <GengarContainer>
-        <GengarPlay
+        {state.loaded &&<GengarPlay
           onGame={() => {
             setState({...state, game: !state.game})
           }}
-        />
+        />}
       </GengarContainer>
       <ChatRoomStyle>
-        <Spline scene={room_url} />
+        <Spline scene={room_url} onLoad={onLoad}/>
       </ChatRoomStyle>
-      <ChatboxStyle>
+      {state.loaded && <ChatboxStyle>
         <Chatbox room={props.room} friends={state.friends} user={props.user}/>
-      </ChatboxStyle>
+      </ChatboxStyle>}
       {/* {state.friends && <FriendList />} */}
       {state.settings && <Settings />}
       {state.music && <Music className="music-player"/>}
@@ -73,8 +82,12 @@ export default function ChatRoom(props) {
           setState({...state, game: !state.game})
         }} />}
     </div>
+    </div>
   );
 }
+
+
+ 
 
 const ChatboxStyle = styled.div`
   width: 28%;
