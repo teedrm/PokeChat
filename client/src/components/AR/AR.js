@@ -9,7 +9,7 @@ export default function AR() {
             image = "https://github.com/teedrm/final/blob/master/client/src/components/AR/img/charmander.png?raw=true";
             break;
         case "squirtle":
-            image = "https://github.com/teedrm/final/blob/master/client/src/components/AR/img/squirtle.png";
+            image = "https://github.com/teedrm/final/blob/master/client/src/components/AR/img/squirtle.png?raw=true";
             break;
         case "koffing":
             image = "https://github.com/teedrm/final/blob/master/client/src/components/AR/img/koffing.png?raw=true";
