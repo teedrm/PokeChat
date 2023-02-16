@@ -55,7 +55,7 @@ export default function AR() {
                 <ul className="ar-list">
                     <li>Use your IOS device to scan the QR code</li>
                     <li>Click download</li>
-                    <li>Click the arrow down on the left of address bar (download folder)</li>
+                    <li>Click the arrow down on the left of address bar then click on "Downloads"</li>
                     <li>Click file to open</li>
                 </ul>
             </div>
