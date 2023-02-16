@@ -4,9 +4,12 @@ import "./ar.css";
 export default function AR() {
     const [selectedPokemon, setSelectedPokemon] = useState("");
     let image = ``;
-    switch(selectedPokemon) {
+    switch (selectedPokemon) {
         case "charmander":
             image = "https://github.com/teedrm/final/blob/master/client/src/components/AR/img/charmander.png?raw=true";
+            break;
+        case "squirtle":
+            image = "https://github.com/teedrm/final/blob/master/client/src/components/AR/img/squirtle.png";
             break;
         case "koffing":
             image = "https://github.com/teedrm/final/blob/master/client/src/components/AR/img/koffing.png?raw=true";
@@ -22,22 +25,23 @@ export default function AR() {
         //     break;
         case "piplup":
             image = "https://github.com/teedrm/final/blob/master/client/src/components/AR/img/piplup.png?raw=true";
-            break; 
+            break;
         case "snorlax":
             image = "https://github.com/teedrm/final/blob/master/client/src/components/AR/img/snorlax.png?raw=true";
-            break;   
+            break;
     }
     return (
         <div className="ar-container">
             <div className="ar-title">
                 <div className="ar-message">Select a pokemon to take picture with:</div>
-                <select 
-                    id="ar-select" 
+                <select
+                    id="ar-select"
                     name="ar-select"
-                    onChange={(event) => {setSelectedPokemon(event.target.value)}}
+                    onChange={(event) => { setSelectedPokemon(event.target.value) }}
                 >
                     <option value="">--Please choose a pokemon--</option>
                     <option value="charmander">Charmander</option>
+                    <option value="squirtle">Squirtle</option>
                     <option value="koffing">Koffing</option>
                     <option value="gengar">Gengar</option>
                     <option value="greninjia">Greninjia</option>
