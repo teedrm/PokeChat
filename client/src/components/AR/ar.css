@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap');
+
+.ar-container {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    border: solid rgb(255, 211, 15);
+    padding: 5px;
+    width: 35%;
+    height: 40%;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 34%;
+  }
+  
+
+  
+  .ar-message {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-top:2px;
+  }
+
+  #ar-select {
+    width: 220px;
+    height: 30px;
+    border: 1px solid #999;
+    font-size: 15px;
+    color: #1c87c9;
+    background-color: #eee;
+    border-radius: 5px;
+
+    margin-left: 25px;
+  }
+
+  .ar-title {
+    display: flex;
+    margin-top: 40px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .ar-img {
+    display: flex;
+    margin-left:20px;
+  }
+
+  .ar-list {
+    margin-top: 40px;
+    margin-right: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:600;
+  }
+
+  .ar-list li {
+    margin-top:8px;
+  }

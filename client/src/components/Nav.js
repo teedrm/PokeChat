@@ -1,6 +1,6 @@
 import { React } from "react";
 import "./navbar.css";
-import { FaHome, FaRegSun, FaMusic, FaUserFriends } from "react-icons/fa";
+import { FaHome, FaRegSun, FaMusic, FaUserFriends, FaCamera } from "react-icons/fa";
 
 export default function Navbar(props) {
   // const [state, setState] = useState({
@@ -30,6 +30,13 @@ export default function Navbar(props) {
               music={props.music}
               onClick={props.onMusic}
             />
+          </li>
+          <li>
+            <FaCamera
+             size={17}
+             camera={props.camera}
+             onClick={props.onCamera}
+             />
           </li>
           <li>
             <FaRegSun
