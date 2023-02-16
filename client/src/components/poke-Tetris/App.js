@@ -10,7 +10,7 @@ export default function PokeTetris() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowTetris(true);
-    }, 17000);
+    }, 12000);
     return () => clearTimeout(timer);
   }, []);
 
