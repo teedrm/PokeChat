@@ -7,9 +7,8 @@ export const StyledTetrisWrapper = styled.div`
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
-  transform: scale(0.9);
+  transform: scale(0.8);
 `;
-// background: url(${bgImage}) #000;
 
 export const StyledTetris = styled.div`
   display: flex;
