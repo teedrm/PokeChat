@@ -1,14 +1,19 @@
 import Spline from "@splinetool/react-spline";
 import styled from "styled-components";
+import React, { Suspense } from 'react';
 
-export default function App() {
+export default function App(props) {
+  const {onLoad} = props
   return (
+ 
     <Wrapper>
       <Spline
         className="spline"
+        onLoad={onLoad}
         scene="https://prod.spline.design/TTEvMkutHHzjqOBT/scene.splinecode"
       />
     </Wrapper>
+
   );
 }
 

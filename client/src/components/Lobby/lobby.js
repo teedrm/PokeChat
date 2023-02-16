@@ -1,5 +1,7 @@
 // import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
+import {useState} from "react";
+
 import styled from "styled-components";
 import "./lobby.css"
 import LobbyScene from "./lobbyscene";
@@ -119,15 +121,16 @@ import Lobby from "./lobbylayout";
 // //   );
 // // }
 export default function LobbyPage() {
+
   return (
-    <Wrapperdiv>
-      <LobbyContainer>
-      <Lobby />
-      </LobbyContainer>
-      <SceneContainer>
-      <LobbyScene/>
-      </SceneContainer>
-    </Wrapperdiv>
+      <Wrapperdiv>
+        <LobbyContainer>
+        <Lobby />
+        </LobbyContainer>
+        <SceneContainer>
+        <LobbyScene/>
+        </SceneContainer>
+      </Wrapperdiv>
   )
 }
 
