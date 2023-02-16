@@ -11,6 +11,7 @@ import Music from "./Musicplayer/App";
 import GengarPlay from "./GengarPlay";
 import GameMenu from "./GameMenu";
 import Loader from "./Loader";
+import AR from "./AR/AR";
 
 export default function ChatRoom(props) {
   let room_url = "";
@@ -20,15 +21,16 @@ export default function ChatRoom(props) {
     settings: false,
     music: false,
     game: false,
-    loaded: false
+    loaded: false,
+    camera: false
   });
 
 
   function onLoad() {
-    setState({...state, loaded: true})
+    setState({ ...state, loaded: true })
   }
 
-  switch(props.room) {
+  switch (props.room) {
     case "center":
       room_url = "https://prod.spline.design/kIeBNERFD3J58-JX/scene.splinecode";
       break;
@@ -45,49 +47,53 @@ export default function ChatRoom(props) {
 
   return (
     <div>
-       {!state.loaded && <div className="loading"><div className="words">Loading...</div><Loader /></div>}
-    <div>
-      {state.loaded && <Navbar
-        onHome = { () => {
-          navigate("/lobby");
-        }}
-        onFriends={() => {
-          setState({ ...state, friends: !state.friends });
-        }}
-        onSettings={() => {
-          setState({ ...state, settings: !state.settings });
-        }}
-        onMusic={() => {
-          setState({ ...state, music: !state.music });
-        }}
-      />}
-      <GengarContainer>
-        {state.loaded &&<GengarPlay
-          onGame={() => {
-            setState({...state, game: !state.game})
+      {!state.loaded && <div className="loading"><div className="words">Loading...</div><Loader /></div>}
+      <div>
+        {state.loaded && <Navbar
+          onHome={() => {
+            navigate("/lobby");
+          }}
+          onFriends={() => {
+            setState({ ...state, friends: !state.friends });
+          }}
+          onSettings={() => {
+            setState({ ...state, settings: !state.settings });
+          }}
+          onMusic={() => {
+            setState({ ...state, music: !state.music });
+          }}
+          onCamera={() => {
+            setState({ ...state, camera: !state.camera });
           }}
         />}
-      </GengarContainer>
-      <ChatRoomStyle>
-        <Spline scene={room_url} onLoad={onLoad}/>
-      </ChatRoomStyle>
-      {state.loaded && <ChatboxStyle>
-        <Chatbox room={props.room} friends={state.friends} user={props.user}/>
-      </ChatboxStyle>}
-      {/* {state.friends && <FriendList />} */}
-      {state.settings && <Settings />}
-      {state.music && <Music className="music-player"/>}
-      {state.game && <GameMenu  
-        onGame={() => {
-          setState({...state, game: !state.game})
-        }} />}
-    </div>
+        <GengarContainer>
+          {state.loaded && <GengarPlay
+            onGame={() => {
+              setState({ ...state, game: !state.game })
+            }}
+          />}
+        </GengarContainer>
+        <ChatRoomStyle>
+          <Spline scene={room_url} onLoad={onLoad} />
+        </ChatRoomStyle>
+        {state.loaded && <ChatboxStyle>
+          <Chatbox room={props.room} friends={state.friends} user={props.user} />
+        </ChatboxStyle>}
+        {/* {state.friends && <FriendList />} */}
+        {state.settings && <Settings />}
+        {state.music && <Music className="music-player" />}
+        {state.camera && <AR />}
+        {state.game && <GameMenu
+          onGame={() => {
+            setState({ ...state, game: !state.game })
+          }} />}
+      </div>
     </div>
   );
 }
 
 
- 
+
 
 const ChatboxStyle = styled.div`
   width: 28%;
