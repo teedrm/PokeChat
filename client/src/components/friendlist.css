@@ -23,12 +23,16 @@
 
 }
 .myself-name {
-  font-weight: bold;
+  font-weight: bolder;
   margin-top: 2.5px;
 }
-.icon {
+.user-icon {
   margin: 5px 6px 0 25px;
 }
+.icon {
+  margin: 5px 6px 0 15px;
+}
+
 .add-friend input {
   width: 100%;
   margin-top: 5px;
@@ -46,6 +50,7 @@
 .friends-container ul {
   list-style-type: none;
   overflow-y: auto;
+  margin-left: -5px;
 }
 
 .friends-container li {
@@ -80,4 +85,19 @@
 
 .friends-container ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.online-username {
+  font-weight: bold;
+}
+
+.online-room{
+  margin-left: 10px;
+  margin-bottom: 5px;
+  border: 1px solid rgb(21, 255, 177);
+  border-radius: 10px;
+  background-color: aquamarine;
+  padding: 2px;
+  font-size: 15px;
+
 }
