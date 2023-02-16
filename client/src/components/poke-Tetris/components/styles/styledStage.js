@@ -12,4 +12,8 @@ export const StyledStage = styled.div`
   max-width: 25vw;
   background: black;
   border: 15px solid #555;
+  background: black;
+  border: 10px solid #eee;
+  border-image: linear-gradient(to right, #ff105f, #ffad06);
+  border-image-slice: 1;
 `;
