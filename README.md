@@ -72,13 +72,18 @@ Back End:
 
 
 ## Installation
+To install dependencies:
 
-`npm install`
+```sh
+npm install
+```
 
-To Start Server:
+To Start Server, go in your server / client folder:
 
-`npm start`
+```sh
+npm start
+```
 
-To Visit App:
+To Open in your browser
 
-`localhost:3000`
+`http://localhost:8000`
