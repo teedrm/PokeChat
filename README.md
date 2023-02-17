@@ -12,6 +12,9 @@ PokeChat is a 3D virtual chat space that allows mutiple users to interact with e
     <li>
       <a href="#about-the-project">About The Project</a>
     </li>
+    <li>
+      <a href="#results">Results</a>
+    </li>
      <li><a href="#built-with">Built With</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -22,6 +25,16 @@ PokeChat is a 3D virtual chat space that allows mutiple users to interact with e
 
 ## About The Project
 Inspired by [Gather Town](https://www.gather.town/), we decided to create a 3D virtual space for people to interact with each other all around the world. We wanted to make the app a lighthearted and enjoyable experience, which is why we have chosen to create a world themed around Pokemons.
+
+## Results
+![Scenes from the chatrooms](https://github.com/teedrm/final/blob/master/docs/pokechat1.gif)
+
+![Hompage](https://github.com/teedrm/final/blob/master/docs/Screenshot%202023-02-16%20at%203.31.32%20PM.png)
+
+![Login screen](https://github.com/teedrm/final/blob/master/docs/Screenshot%202023-02-16%20at%203.34.12%20PM.png)
+
+![Lobby](https://github.com/teedrm/final/blob/master/docs/Screenshot%202023-02-16%20at%203.32.13%20PM.png)
+
 
 ## Built With
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
@@ -56,3 +69,13 @@ Back End:
 
 
 ## Installation
+
+npm install
+
+To Start Server:
+
+npm start
+
+To Visit App:
+
+localhost:3000/
