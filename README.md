@@ -27,6 +27,9 @@ PokeChat is a 3D virtual chat space that allows mutiple users to interact with e
 Inspired by [Gather Town](https://www.gather.town/), we decided to create a 3D virtual space for people to interact with each other all around the world. We wanted to make the app a lighthearted and enjoyable experience, which is why we have chosen to create a world themed around Pokemons.
 
 ## Results
+
+<a href="https://youtu.be/TUSWdc97DZw">Link to PokeChat demo</a>
+
 ![Scenes from the chatrooms](https://github.com/teedrm/final/blob/master/docs/pokechat1.gif)
 
 ![Hompage](https://github.com/teedrm/final/blob/master/docs/Screenshot%202023-02-16%20at%203.31.32%20PM.png)
@@ -70,12 +73,12 @@ Back End:
 
 ## Installation
 
-npm install
+`npm install`
 
 To Start Server:
 
-npm start
+`npm start`
 
 To Visit App:
 
-localhost:3000/
+`localhost:3000`
