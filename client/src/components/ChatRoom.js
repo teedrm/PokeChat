@@ -76,7 +76,8 @@ export default function ChatRoom(props) {
         <ChatRoomStyle>
           <Spline scene={room_url} onLoad={onLoad} />
         </ChatRoomStyle>
-        {state.loaded && <ChatboxStyle>
+        {state.loaded && 
+        <ChatboxStyle>
           <Chatbox room={props.room} friends={state.friends} user={props.user} />
         </ChatboxStyle>}
         {/* {state.friends && <FriendList />} */}

@@ -12,7 +12,7 @@ import PokeTetris from "./poke-Tetris/App";
 import PokeMemory from "./poke-memory/App";
 
 export default function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('token')) || null);
 
   return (
     <div>

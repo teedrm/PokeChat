@@ -40,12 +40,6 @@ app.post("/signup", (req, res) => {
   const data = req.body;
   userQueries.createNewUser(data)
     .then(r => {
-      // res.cookie("user", generateRandomString(), {
-      //   maxAge: 1000 * 60 * 60 * 24, // 1 day
-      //   httpOnly: true,
-      //   sameSite: 'strict',
-      //   secure: true
-      // } )
       req.session.token = generateRandomString()
       res.json({ "message": "successfully created user" });
     })
@@ -72,7 +66,7 @@ io.on('connection', client => {
 
   // Add this client.id to our clients lookup object
   clients[client.id] = name;
-  console.log(clients);
+  console.log("clients",clients);
 
   client.on('join_room', data => {
     client.join(data);
@@ -81,11 +75,6 @@ io.on('connection', client => {
     //system message to notify user joined
     io.in(data).emit('system', {message: `${name} has just joined`});
     io.emit('system',{users});
-    
-    // const online_users = users.filter(user => user.room === data);
-    // console.log('online_users',online_users);
-    // client.broadcast.to(data).emit('online', online_users);
-    // client.to(data).emit('online', online_users);
   })
 
   
