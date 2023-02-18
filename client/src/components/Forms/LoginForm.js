@@ -18,9 +18,10 @@ export default function LoginForm(props) {
   const login = function(email, password) {
     axios.post("/login", {email, password})
       .then(res => {
-        console.log(res.data);
+        console.log("login res.data", res.data);
+        localStorage.setItem("token", JSON.stringify(res.data));
         setUser(res.data);
-        navigate("/lobby")
+        navigate("/lobby");
       });
   };
 

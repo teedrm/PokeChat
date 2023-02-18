@@ -27,6 +27,7 @@ export default function FriendList(props) {
       <div className="myself">
         <TbPokeball size={20} className="user-icon" />
         <div class="myself-name">{props.user.name}</div>
+        <div className="online-room">{props.room}</div>
       </div>
       <div class="divider">
         {/* <input placeholder="username" />

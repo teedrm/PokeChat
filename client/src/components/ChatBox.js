@@ -32,10 +32,10 @@ export default function Chatbox(props) {
     setSocket(socket);
 
     socket.on('connect', () => {
-      console.log("connected");
+      console.log("connected");    
+      socket.emit("join_room", room);
     });
 
-    socket.emit("join_room", room);
 
     socket.on("public", (data) => {
       const message = `${data.from} says:  ${data.text}`;
@@ -69,7 +69,6 @@ export default function Chatbox(props) {
 
   const chatboxstyle = { listStyle: "none" };
   const messagesCopy = messages;
-  console.log(messages);
   const listOfMessages = messagesCopy.map((msg, i) => {
     return (
       <li style={chatboxstyle} key={i}>
@@ -79,7 +78,7 @@ export default function Chatbox(props) {
   });
   return (
     <container id="chat-friend">
-      <div class="chat-box">
+      {room !== "lobby" && (<div class="chat-box">
         <div id="render-message"><ul>{listOfMessages}</ul></div>
         <div class="message-box">
           <input
@@ -96,8 +95,8 @@ export default function Chatbox(props) {
           </button>
           <button onClick={() => setMessages([])}>Clear</button>
         </div>
-      </div>
-      {props.friends && <FriendList className="friendlist" online={users} user={props.user}/>}
+      </div>)}
+      {props.friends && <FriendList className="friendlist" online={users} user={props.user} room={props.room}/>}
     </container>
   );
   //need to pass in the name (current user) and online user list
